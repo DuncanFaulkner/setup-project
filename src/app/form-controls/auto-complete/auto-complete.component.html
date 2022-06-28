@@ -1,0 +1,55 @@
+<form style="margin-left: 20px" [formGroup]="countyForm">
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      placeholder="Counties Group"
+      formControlName="countyGroup"
+      required
+      [matAutocomplete]="autoGroup"
+    />
+    <mat-autocomplete #autoGroup="matAutocomplete">
+      <mat-optgroup
+        *ngFor="let group of countyGroupOptions | async"
+        [label]="group.capital"
+      >
+        <mat-option *ngFor="let name of group.names" [value]="name">
+          {{ name }}
+        </mat-option>
+      </mat-optgroup>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+<!-- <div style="margin-left: 20px">
+  <mat-form-field appearance="outline">
+    <mat-label>Simple Autocomplete</mat-label>
+    <input
+      type="text"
+      matInput
+      [matAutocomplete]="auto"
+      [formControl]="formControl"
+      [matAutocompleteConnectedTo]="origin"
+    />
+  </mat-form-field>
+
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option
+      *ngFor="let country of filteredCountries | async"
+      [value]="country"
+      >{{ country }}
+    </mat-option>
+  </mat-autocomplete>
+</div>
+
+<div
+  matAutocompleteOrigin
+  #origin="matAutocompleteOrigin"
+  style="
+    outline: 1px solid red;
+    position: relative;
+    top: 200px;
+    width: 300px;
+    margin-left: 20px;
+  "
+></div> -->
