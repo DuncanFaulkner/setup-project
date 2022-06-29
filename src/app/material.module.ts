@@ -11,8 +11,8 @@ const MATERIALMODULES = [
   MatAutocompleteModule,
 ];
 @NgModule({
-  imports: [...MATERIALMODULES],
+  imports: [MATERIALMODULES],
   declarations: [],
-  exports: [...MATERIALMODULES],
+  exports: [MATERIALMODULES],
 })
 export class MaterialModule {}

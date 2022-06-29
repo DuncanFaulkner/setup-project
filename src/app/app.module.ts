@@ -13,7 +13,7 @@ const APPMODULES = [
 ];
 @NgModule({
   declarations: [AppComponent],
-  imports: [...APPMODULES],
+  imports: [APPMODULES],
   providers: [],
   bootstrap: [AppComponent],
 })
